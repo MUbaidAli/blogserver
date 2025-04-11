@@ -5,7 +5,7 @@ const wrapAsync = require("../utils/wrapAsync");
 
 const authAdminMiddleware = wrapAsync(async (req, res, next) => {
   let token = req.cookies.token;
-  // console.log(token);
+  console.log(token);
   if (!token) {
     throw new ExpressError(401, "Not Authorized , No Token");
   }
