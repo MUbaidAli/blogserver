@@ -15,7 +15,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:5173","https://blog-client-red-beta.vercel.app", credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173","https://blog-client-red-beta.vercel.app"], credentials: true }));
 app.use(cookieParser());
 const { v2: cloudinary } = require("cloudinary");
 
