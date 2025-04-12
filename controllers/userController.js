@@ -90,7 +90,7 @@ const loginUser = wrapAsync(async (req, res) => {
   if (user && passwordMatched) {
     res.cookie("token", token, {
       httpOnly: true, // Prevents JavaScript access (XSS protection)
-      secure: true, // Use true in production with HTTPS
+      secure: process.env.NODE_ENV === "production", // Use true in production with HTTPS
       sameSite: "None", // Prevents CSRF attacks
       maxAge: 7 * 24 * 60 * 60 * 1000, // Expires in 7 days
     });
