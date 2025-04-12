@@ -168,8 +168,8 @@ const adminRegister = wrapAsync(async (req, res) => {
 const logOut = wrapAsync((req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: true, // Ensure it's secure in production
-    sameSite: "None",
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
     path: "/",
   });
 
