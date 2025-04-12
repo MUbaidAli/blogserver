@@ -169,7 +169,7 @@ const logOut = wrapAsync((req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     secure: true, // Ensure it's secure in production
-    sameSite: "Strict",
+    sameSite: "None",
     path: "/",
   });
 
