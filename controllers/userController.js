@@ -173,6 +173,10 @@ const logOut = wrapAsync((req, res) => {
     path: "/",
   });
 
+  console.log(process.env.NODE_ENV);
+  console.log(process.env.NODE_ENV === "production");
+console.log(process.env.NODE_ENV === "production" ? "None" : "Lax");
+
   res.json({ message: "Logged Out Successfully" });
 });
 
